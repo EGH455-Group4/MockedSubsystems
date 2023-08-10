@@ -1,13 +1,16 @@
 '''Handler will showcase the target detection endpoints'''
-from flask import Flask, request
-from flask_restful import Resource, Api, marshal
+import os, random
+
+from flask import Flask, send_file
+from flask_restful import Resource, Api
 
 class TargetDetection(Resource):
     '''Mocks the sample POST endpoint'''
 
     def post(self):
         '''The HTTP GET response'''
-        return {'status': 'OK'}
+        choice = random.choice(os.listdir("./target/images"))
+        return send_file("./images/"+choice, mimetype="image/jpg")
 
 class Handler():
     '''Used to create the target detection server'''
