@@ -1,26 +1,26 @@
-'''Handler will showcase the target detection endpoints'''
+'''Handler will showcase the image processing endpoints'''
 import os, random
 
 from flask import Flask, send_file
 from flask_restful import Resource, Api
 
-class TargetDetection(Resource):
-    '''Mocks the sample POST endpoint'''
+class CurrentImage(Resource):
+    '''Mocks the current-image endpoint'''
 
     def post(self):
-        '''The HTTP GET response'''
-        choice = random.choice(os.listdir("./target/images"))
+        '''The HTTP POST response'''
+        choice = random.choice(os.listdir("./image/images"))
         return send_file("./images/"+choice, mimetype="image/jpg")
 
 class Handler():
-    '''Used to create the target detection server'''
+    '''Used to create the image processing server'''
     def __init__(self, port: str):
         self.app = Flask(__name__)
         self.api = Api(self.app)
 
         self.port = port
 
-        self.api.add_resource(TargetDetection, '/target-detection')
+        self.api.add_resource(CurrentImage, '/current-image')
 
     def Run(self):
         '''Will actually run the target detection server'''

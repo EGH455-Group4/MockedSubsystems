@@ -3,10 +3,10 @@ from flask import Flask
 from flask_restful import Resource, Api
 
 class Sample(Resource):
-    '''Mocks the sample POST endpoint'''
+    '''Mocks the sample endpoint'''
 
     def post(self):
-        '''The HTTP GET response'''
+        '''The HTTP POST response'''
         return {'status': 'OK'}
 
 class Handler():
