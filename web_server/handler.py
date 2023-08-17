@@ -10,6 +10,16 @@ class AirQuality(Resource):
         data = request.json
         print(data)
         return {'status': 'OK'}
+    
+class TargetDetection(Resource):
+    '''Mocks the target-detection endpoint'''
+
+    def post(self):
+        '''The HTTP POST response'''
+        data = request.json
+        print(data)
+        return {'status': 'OK'}
+
 
 class Handler():
     '''Used to create the sample server'''
@@ -20,6 +30,7 @@ class Handler():
         self.port = port
 
         self.api.add_resource(AirQuality, '/air-quality')
+        self.api.add_resource(TargetDetection, '/target-detection')
 
     def Run(self):
         '''Will actually run the sample server'''
