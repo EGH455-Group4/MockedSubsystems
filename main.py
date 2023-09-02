@@ -5,9 +5,10 @@ from image.handler import Handler as ImageHandler
 from web_server.handler import Handler as WebServerHandler
 
 def main():
-    sample = SampleHandler("9090")
-    image = ImageHandler("9091")
-    web = WebServerHandler("9092")
+    # AQ -> 9050
+    image = ImageHandler("9060")
+    sample = SampleHandler("9070")
+    web = WebServerHandler("9080")
 
     sample_server_thread = Thread(daemon=True, target=sample.Run)
 
