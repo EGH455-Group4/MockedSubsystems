@@ -5,7 +5,7 @@ from flask import Flask, send_file
 from flask_restful import Resource, Api
 
 class CurrentImage(Resource):
-    '''Mocks the current-image endpoint'''
+    '''Mocks the image endpoint'''
 
     def post(self):
         '''The HTTP POST response'''
@@ -20,7 +20,7 @@ class Handler():
 
         self.port = port
 
-        self.api.add_resource(CurrentImage, '/current-image')
+        self.api.add_resource(CurrentImage, '/image')
 
     def Run(self):
         '''Will actually run the target detection server'''
