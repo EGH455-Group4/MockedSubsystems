@@ -7,7 +7,7 @@ from flask_restful import Resource, Api
 class CurrentImage(Resource):
     '''Mocks the image endpoint'''
 
-    def post(self):
+    def get(self):
         '''The HTTP POST response'''
         choice = random.choice(os.listdir("./image/images"))
         return send_file("./images/"+choice, mimetype="image/jpg")

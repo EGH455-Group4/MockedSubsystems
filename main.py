@@ -24,7 +24,7 @@ def main():
 
     air_server_thread.start()
 
-    if True:
+    if False:
         air_service_thread = Thread(daemon=True, target=run_read_sensors)
         air_service_thread.start()
 
